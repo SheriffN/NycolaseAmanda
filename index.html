@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+  
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Personalizado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <div class="image-container">
+            <img src="imagem1.jpg" alt="Imagem" />
+        </div>
+        <h1 class="title">Nycolas e Amanda</h1>
+        <p class="subtitle">Meu bem, quem diria que um dia uma faria um SITE para dedicar o meu amor por ti, mas olha só onde chegamos! Nosso começo foi meio conturbado, né? Tivemos que passar por diversas situações afastados para finalmente estarmos juntos, mas finalmente estamos! Desde que começamos a ficar até o dia de hoje, meu amor, meu orgulho, minha amizade e minha admiração por você só cresceram (e continuam crescendo). Você se tornou uma pessoa muito especial para mim, alguém que me faz feliz desde os momentos descontraídos até os momentos de seriedade. Espero ser uma pessoa com quem você possa esquecer dos problemas e levar a vida de forma leve. Obrigado por ser a pessoa incrível que você é! Praticamente namoramos, certo? Mas que tal formalizar isso? Como, Hermione já foi para Rony, Anna foi para Kristoff, Rapunzel foi para José, a noiva cadáver foi para Victor... </p>
+        <p class="juntos-texto">Juntos há</p>
+    </div>
+    <div class="timer-container">
+        <table class="timer-table">
+            <tr>
+                <td><span id="years">0</span><div class="label">Anos</div></td>
+                <td><span id="days">0</span><div class="label">Dias</div></td>
+                <td><span id="hours">0</span><div class="label">Horas</div></td>
+                <td><span id="minutes">0</span><div class="label">Minutos</div></td>
+                <td><span id="seconds">0</span><div class="label">Segundos</div></td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    <script>
+        // Data inicial do evento
+        const startDate = new Date('2024-09-09T15:00:00'); 
+    
+        // Função para atualizar o temporizador
+        function updateTimer() {
+            const currentDate = new Date(); // Data atual
+            const diff = currentDate - startDate; // Diferença entre a data atual e a data inicial
+    
+            // Calculando anos, dias, horas, minutos e segundos
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 365;
+            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+            const minutes = Math.floor(diff / (1000 * 60)) % 60;
+            const seconds = Math.floor(diff / 1000) % 60;
+    
+            // Atualizando os valores na tabela
+            document.getElementById('years').textContent = years;
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+    
+        // Atualizar o temporizador a cada segundo
+        setInterval(updateTimer, 1000);
+    
+        // Inicializa o temporizador imediatamente
+        updateTimer();
+    </script>
+
+</body>
+</html>
+
