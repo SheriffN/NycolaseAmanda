@@ -111,10 +111,10 @@ body {
 /* Estilo para as linhas da tabela */
 .timer-row {
     display: flex;
-    justify-content: space-between; /* Distribui igualmente os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha no mobile */
+    justify-content: space-between; /* Distribui os itens de maneira espaçada */
     gap: 30px; /* Espaçamento entre os retângulos */
     margin-bottom: 30px;
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha no mobile */
 }
 
 /* Estilo para cada retângulo */
@@ -147,13 +147,14 @@ body {
 
 /* Estilos responsivos para telas menores (mobile) */
 @media screen and (max-width: 768px) {
-    /* Ajuste do layout para manter duas colunas */
+    /* Ajustes para garantir duas colunas no mobile */
     .timer-row {
-        justify-content: space-evenly; /* Mantém a distribuição igual entre os itens */
+        justify-content: space-evenly; /* Espaça igualmente os itens */
     }
 
     .timer-box {
-        flex: 0 0 6%; /* Faz com que cada retângulo ocupe cerca de 50% da largura */
-        max-width: 6%; /* Limita a largura máxima para 48% */
+        width: calc(50% - 20px); /* Garante que duas colunas fiquem lado a lado */
+        max-width: 24%; /* Define a largura máxima para 50% da tela */
+        margin: 10px 0; /* Ajuste as margens para garantir espaçamento */
     }
 }
