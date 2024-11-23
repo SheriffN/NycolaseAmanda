@@ -147,13 +147,14 @@ body {
 /* Estilos responsivos para telas menores (mobile) */
 @media screen and (max-width: 768px) {
     .timer-row {
-        justify-content: space-between; /* Garante o espaçamento entre as caixas */
+        justify-content: space-evenly; /* Garante o espaçamento adequado */
     }
 
     .timer-box {
         width: 48%; /* Ajuste para garantir que duas caixas caibam lado a lado */
-        height: auto; /* Ajusta a altura para que as caixas não fiquem comprimidas */
         max-width: 48%; /* Define largura máxima para que duas caixas fiquem lado a lado */
         margin-bottom: 10px; /* Garante que as caixas não fiquem coladas */
+        height: auto; /* Ajusta a altura automaticamente */
+        flex-grow: 1; /* Faz com que a caixa cresça proporcionalmente */
     }
 }
