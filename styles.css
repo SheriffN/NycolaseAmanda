@@ -111,7 +111,7 @@ body {
 /* Estilo para as linhas da tabela */
 .timer-row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Distribui igualmente os itens */
     gap: 30px; /* Espaçamento entre os retângulos */
     margin-bottom: 30px;
     flex-wrap: wrap; /* Permite que os itens quebrem a linha no mobile */
@@ -149,11 +149,11 @@ body {
 @media screen and (max-width: 768px) {
     /* Ajuste do layout para manter duas colunas */
     .timer-row {
-        gap: 10px; /* Espaço menor entre as colunas no mobile */
+        justify-content: space-evenly; /* Mantém a distribuição igual entre os itens */
     }
 
     .timer-box {
-        flex-basis: calc(50% - 20px); /* Cada retângulo ocupa 50% da largura com espaço para a borda */
-        max-width: 150px; /* Impede que o tamanho do retângulo ultrapasse o limite */
+        flex: 0 0 48%; /* Faz com que cada retângulo ocupe cerca de 50% da largura */
+        max-width: 48%; /* Limita a largura máxima para 48% */
     }
 }
