@@ -119,7 +119,7 @@ body {
 
 /* Estilo para cada retângulo */
 .timer-box {
-    width: 150px; /* Largura fixa do retângulo */
+    flex-basis: calc(50% - 10px); /* Ocupa 50% do espaço menos o gap de 10px */
     height: 120px; /* Altura fixa do retângulo */
     background-color: #000000; /* Cor de fundo preta */
     color: white; /* Cor do texto */
@@ -128,7 +128,6 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 15px; /* Bordas arredondadas */
-    margin-bottom: 10px; /* Margem inferior para separar as caixas */
 }
 
 /* Estilo do número dentro de cada retângulo */
@@ -151,10 +150,7 @@ body {
     }
 
     .timer-box {
-        width: 28%; /* Ajuste para garantir que duas caixas caibam lado a lado */
-        max-width: 28%; /* Define largura máxima para que duas caixas fiquem lado a lado */
-        margin-bottom: 15px; /* Garante que as caixas não fiquem coladas */
+        flex-basis: calc(50% - 10px); /* Ajuste para garantir que duas caixas fiquem lado a lado */
         height: auto; /* Ajusta a altura automaticamente */
-        flex-grow: 1; /* Faz com que a caixa cresça proporcionalmente */
     }
 }
