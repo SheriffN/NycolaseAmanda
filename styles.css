@@ -118,7 +118,7 @@ body {
 
 /* Estilo para cada retângulo */
 .timer-box {
-    width: 300px; /* Largura do retângulo */
+    width: 150px; /* Largura do retângulo */
     height: 120px; /* Altura do retângulo */
     background-color: #000000; /* Cor de fundo preta */
     color: white; /* Cor do texto */
