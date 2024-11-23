@@ -114,6 +114,7 @@ body {
     justify-content: center;
     gap: 30px; /* Espaçamento entre os retângulos */
     margin-bottom: 30px;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha no mobile */
 }
 
 /* Estilo para cada retângulo */
@@ -127,6 +128,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 15px; /* Bordas arredondadas */
+    margin: 10px; /* Espaço entre os retângulos */
+    box-sizing: border-box; /* Inclui a borda e o padding no cálculo da largura */
 }
 
 /* Estilo do número dentro de cada retângulo */
@@ -142,4 +145,15 @@ body {
     margin-top: 10px; /* Espaço entre o número e o rótulo */
 }
 
+/* Estilos responsivos para telas menores (mobile) */
+@media screen and (max-width: 768px) {
+    /* Ajuste do layout para manter duas colunas */
+    .timer-row {
+        gap: 10px; /* Espaço menor entre as colunas no mobile */
+    }
 
+    .timer-box {
+        width: calc(50% - 20px); /* Cada retângulo ocupa 50% da largura com espaço para a borda */
+        max-width: 150px; /* Impede que o tamanho do retângulo ultrapasse o limite */
+    }
+}
