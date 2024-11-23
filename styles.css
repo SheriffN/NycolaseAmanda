@@ -118,7 +118,7 @@ body {
 
 /* Estilo para cada retângulo */
 .timer-box {
-    width: 150px; /* Largura do retângulo */
+    width: 500px; /* Largura do retângulo */
     height: 120px; /* Altura do retângulo */
     background-color: #000000; /* Cor de fundo preta */
     color: white; /* Cor do texto */
@@ -142,4 +142,70 @@ body {
     margin-top: 10px; /* Espaço entre o número e o rótulo */
 }
 
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .timer-row {
+        gap: 15px; /* Reduz o espaçamento entre os quadrados */
+    }
 
+    .timer-box {
+        width: 120px; /* Reduz a largura do retângulo */
+        height: 100px; /* Reduz a altura do retângulo */
+    }
+
+    .timer-box span {
+        font-size: 2.5rem; /* Ajusta o tamanho da fonte do número */
+    }
+
+    .timer-box .label {
+        font-size: 1rem; /* Ajusta o tamanho da fonte do rótulo */
+    }
+
+    .title {
+        font-size: 2.5rem; /* Ajusta o tamanho do título */
+    }
+
+    .subtitle {
+        font-size: 1.2rem; /* Ajusta o tamanho do subtítulo */
+        margin: 0 20px;
+    }
+
+    .carousel-container {
+        width: 90%; /* Faz o carrossel ocupar 90% da tela */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+}
+
+/* Media Queries para telas muito pequenas (ex: smartphones em modo retrato) */
+@media (max-width: 480px) {
+    .timer-row {
+        flex-direction: column; /* Coloca os elementos do cronômetro em coluna */
+        gap: 10px; /* Ajusta o espaçamento */
+    }
+
+    .timer-box {
+        width: 100px; /* Reduz ainda mais a largura do retângulo */
+        height: 80px; /* Reduz a altura do retângulo */
+    }
+
+    .timer-box span {
+        font-size: 2rem; /* Ajusta o tamanho da fonte do número */
+    }
+
+    .timer-box .label {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte do rótulo */
+    }
+
+    .title {
+        font-size: 2rem; /* Ajusta o tamanho do título */
+    }
+
+    .subtitle {
+        font-size: 1rem; /* Ajusta o tamanho do subtítulo */
+    }
+
+    .carousel-container {
+        width: 80%; /* Faz o carrossel ocupar 80% da tela */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+}
