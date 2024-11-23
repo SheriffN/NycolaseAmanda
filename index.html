@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-  
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -11,57 +10,188 @@
 </head>
 <body>
     <div class="content">
-        <div class="image-container">
-            <img src="imagem1.jpg" alt="Imagem" />
+        <!-- Carrossel de Imagens -->
+        <div class="carousel-container">
+            <div class="image-container">
+                <img class="carousel-image" src="imagem1.jpg" alt="Imagem 1" />
+                <img class="carousel-image" src="imagem2.jpeg" alt="Imagem 2" />
+                <img class="carousel-image" src="imagem3.jpeg" alt="Imagem 3" />
+                <img class="carousel-image" src="imagem4.jpeg" alt="Imagem 4" />
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator" id="indicator1"></div>
+                <div class="indicator" id="indicator2"></div>
+                <div class="indicator" id="indicator3"></div>
+                <div class="indicator" id="indicator4"></div>
+            </div>
         </div>
-        <h1 class="title">Nycolas e Amanda</h1>
-        <p class="subtitle">Meu bem, quem diria que um dia eu faria um SITE para dedicar o meu amor por ti, mas olha só onde chegamos! Nosso começo foi meio conturbado, né? Tivemos que passar por diversas situações afastados para finalmente estarmos juntos, mas finalmente estamos! Desde que começamos a ficar até o dia de hoje, meu amor, meu orgulho, minha amizade e minha admiração por você só cresceram (e continuam crescendo). Você se tornou uma pessoa muito especial para mim, alguém que me faz feliz desde os momentos descontraídos até os momentos de seriedade. Espero ser uma pessoa com quem você possa esquecer dos problemas e levar a vida de forma leve. Obrigado por ser a pessoa incrível que você é! Praticamente namoramos, certo? Mas que tal formalizar isso? Como, Hermione já foi para Rony, Anna foi para Kristoff, Rapunzel foi para José, a noiva cadáver foi para Victor... </p>
-        <p class="juntos-texto">Juntos há</p>
-    </div>
-    <div class="timer-container">
-        <table class="timer-table">
-            <tr>
-                <td><span id="years">0</span><div class="label">Anos</div></td>
-                <td><span id="days">0</span><div class="label">Dias</div></td>
-                <td><span id="hours">0</span><div class="label">Horas</div></td>
-                <td><span id="minutes">0</span><div class="label">Minutos</div></td>
-                <td><span id="seconds">0</span><div class="label">Segundos</div></td>
-            </tr>
-        </table>
-    </div>
-    
-    
-    <script>
-        // Data inicial do evento
-        const startDate = new Date('2024-09-09T15:00:00'); 
-    
-        // Função para atualizar o temporizador
-        function updateTimer() {
-            const currentDate = new Date(); // Data atual
-            const diff = currentDate - startDate; // Diferença entre a data atual e a data inicial
-    
-            // Calculando anos, dias, horas, minutos e segundos
-            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 365;
-            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
-            const minutes = Math.floor(diff / (1000 * 60)) % 60;
-            const seconds = Math.floor(diff / 1000) % 60;
-    
-            // Atualizando os valores na tabela
-            document.getElementById('years').textContent = years;
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-    
-        // Atualizar o temporizador a cada segundo
-        setInterval(updateTimer, 1000);
-    
-        // Inicializa o temporizador imediatamente
-        updateTimer();
-    </script>
 
+        <!-- Título e Texto -->
+        <h1 class="title">Nycolas e Amanda</h1>
+        <p class="subtitle">Meu bem, quem diria que um dia eu faria um SITE para dedicar o meu amor por ti, mas olha só onde chegamos! Nosso começo foi meio conturbado, né? Tivemos que passar por diversas situações afastados para finalmente estarmos juntos, mas finalmente estamos! Desde que começamos a ficar até o dia de hoje, meu amor, meu orgulho, minha amizade e minha admiração por você só cresceram (e continuam crescendo). Você se tornou uma pessoa muito especial para mim, alguém que me faz feliz desde os momentos descontraídos até os momentos de seriedade. Espero ser uma pessoa com quem você possa esquecer dos problemas e levar a vida de forma leve. Obrigado por ser a pessoa incrível que você é! Praticamente namoramos, certo? Mas que tal formalizar isso? Como, Hermione já foi para Rony, Anna foi para Kristoff, Rapunzel foi para José, a noiva cadáver foi para Victor...</p>
+        <p class="juntos-texto">Compartilhando momentos há</p>
+    </div>
+
+     <!-- Tabela Cronômetro -->
+    <div class="timer-container">
+        <div class="timer-row">
+            <div class="timer-box">
+                <span id="years">00</span>
+                <div class="label">Anos</div>
+            </div>
+            <div class="timer-box">
+                <span id="months">00</span>
+                <div class="label">Meses</div>
+            </div>
+        </div>
+        <div class="timer-row">
+            <div class="timer-box">
+                <span id="days">00</span>
+                <div class="label">Dias</div>
+            </div>
+            <div class="timer-box">
+                <span id="hours">00</span>
+                <div class="label">Horas</div>
+            </div>
+        </div>
+        <div class="timer-row">
+            <div class="timer-box">
+                <span id="minutes">00</span>
+                <div class="label">Minutos</div>
+            </div>
+            <div class="timer-box">
+                <span id="seconds">00</span>
+                <div class="label">Segundos</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data de início do cronômetro (09/09/2024 às 15:00)
+        const startDate = new Date('2024-09-09T15:00:00');
+
+        // Função para adicionar zero à esquerda
+        function padZero(num) {
+            return num < 10 ? '0' + num : num;
+        }
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startDate; // Diferença em milissegundos
+
+            // Calculando os valores do cronômetro
+            const seconds = Math.floor(diff / 1000) % 60;
+            const minutes = Math.floor(diff / (1000 * 60)) % 60;
+            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 30;
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30)) % 12;
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+
+            // Atualizando os valores no HTML com a função padZero
+            document.getElementById('years').textContent = padZero(years);
+            document.getElementById('months').textContent = padZero(months);
+            document.getElementById('days').textContent = padZero(days);
+            document.getElementById('hours').textContent = padZero(hours);
+            document.getElementById('minutes').textContent = padZero(minutes);
+            document.getElementById('seconds').textContent = padZero(seconds);
+        }
+
+        // Atualiza o cronômetro a cada segundo
+        setInterval(updateTimer, 1000);
+
+        // Inicializa o cronômetro imediatamente
+        updateTimer();
+
+        // Variáveis para o controle do carrossel
+        const images = document.querySelectorAll('.carousel-image');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentIndex = 0; // Índice da imagem atual
+
+        // Função para mudar a imagem com base no índice
+        function changeImage(index) {
+            // Oculta todas as imagens
+            images.forEach((image, i) => {
+                image.style.display = i === index ? 'block' : 'none';
+            });
+
+            // Atualiza os indicadores
+            indicators.forEach((indicator, i) => {
+                indicator.style.backgroundColor = i === index ? 'red' : 'lightgray';
+            });
+
+            // Atualiza o índice atual
+            currentIndex = index;
+        }
+
+        // Adiciona o evento de clique nas bolinhas
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                changeImage(index); // Muda a imagem ao clicar na bolinha
+            });
+        });
+
+        // Função para permitir o arraste nas imagens (para dispositivos móveis)
+        let startX = 0;
+        let isDragging = false;
+
+        const carouselContainer = document.querySelector('.carousel-container');
+
+        carouselContainer.addEventListener('mousedown', (e) => {
+            startX = e.pageX; // Armazena a posição inicial
+            isDragging = true;
+        });
+
+        carouselContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            const deltaX = e.pageX - startX; // Calcula a distância do arraste
+            if (deltaX > 50) { // Se o arraste for para a direita
+                changeImage((currentIndex === 0 ? images.length : currentIndex) - 1);
+                isDragging = false;
+            } else if (deltaX < -50) { // Se o arraste for para a esquerda
+                changeImage((currentIndex + 1) % images.length);
+                isDragging = false;
+            }
+        });
+
+        carouselContainer.addEventListener('mouseup', () => {
+            isDragging = false; // Finaliza o arraste
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            isDragging = false; // Se o mouse sair da área do carrossel
+        });
+
+        // Para dispositivos móveis (touch events)
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX; // Armazena a posição inicial
+            isDragging = true;
+        });
+
+        carouselContainer.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+
+            const deltaX = e.touches[0].pageX - startX; // Calcula a distância do arraste
+            if (deltaX > 50) { // Se o arraste for para a direita
+                changeImage((currentIndex === 0 ? images.length : currentIndex) - 1);
+                isDragging = false;
+            } else if (deltaX < -50) { // Se o arraste for para a esquerda
+                changeImage((currentIndex + 1) % images.length);
+                isDragging = false;
+            }
+        });
+
+        carouselContainer.addEventListener('touchend', () => {
+            isDragging = false; // Finaliza o arraste
+        });
+
+        // Inicializa a imagem visível
+        changeImage(currentIndex);
+
+        // Função para mudar a imagem automaticamente a cada 5 segundos
+        setInterval(() => {
+            changeImage((currentIndex + 1) % images.length); // Muda para a próxima imagem
+        }, 5000);
+    </script>
 </body>
 </html>
-
