@@ -153,7 +153,7 @@ body {
     }
 
     .timer-box {
-        width: calc(50% - 20px); /* Cada retângulo ocupa 50% da largura com espaço para a borda */
+        flex-basis: calc(50% - 20px); /* Cada retângulo ocupa 50% da largura com espaço para a borda */
         max-width: 150px; /* Impede que o tamanho do retângulo ultrapasse o limite */
     }
 }
