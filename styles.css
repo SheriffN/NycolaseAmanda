@@ -1,3 +1,52 @@
+/* Estilo para o carrossel de imagens */
+.carousel-container {
+    position: relative;
+    width: 324px; /* Largura do carrossel */
+    height: 640.2px; /* Altura do carrossel */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px; /* Bordas arredondadas no contêiner */
+}
+
+.image-container {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%; /* Garante que a imagem ocupe toda a altura */
+    object-fit: cover; /* Garante que a imagem se ajuste ao tamanho */
+    display: none; /* Inicialmente escondido */
+    transition: transform 0.3s ease; /* Transição suave para o zoom */
+}
+
+/* Efeito de zoom nas imagens */
+.carousel-image:hover {
+    transform: scale(1.05); /* Aumento ao passar o mouse */
+}
+
+/* Círculos indicativos */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: lightgray;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilo geral do layout */
 body {
     font-family: Arial, sans-serif;
     background-color: #1c1c1c; /* Preto acinzentado */
@@ -11,40 +60,13 @@ body {
     height: 100vh; /* Altura total da tela */
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center; /* Garante que o conteúdo seja centralizado */
-}
-
-.image-container {
-    margin-bottom: 30px; /* Aumenta o espaço abaixo da imagem */
-    overflow: hidden; /* Garante que o zoom não ultrapasse as bordas arredondadas */
-    width: 324px; /* Largura do contêiner */
-    height: 640.2px; /* Altura do contêiner */
-    border-radius: 20px; /* Bordas arredondadas no contêiner */
-}
-
-.image-container img {
-    width: 100%; /* A imagem ocupa toda a largura do contêiner */
-    height: 100%; /* A imagem ocupa toda a altura do contêiner */
-    object-fit: cover; /* Garante que a imagem cubra o espaço do contêiner */
-    transition: transform 0.3s ease; /* Transição suave para o zoom */
-}
-
-.image-container img:hover {
-    transform: scale(1.05); /* Zoom leve */
-}
-
 .title {
     font-family: 'Dancing Script', cursive; /* Fonte cursiva */
     font-size: 3rem; /* Tamanho da fonte */
-    color: #800080; /* Cor mais brilhante (vermelho mais vibrante) */
+    color: #e7191f; /* Cor mais brilhante (vermelho mais vibrante) */
     text-align: center; /* Centraliza o título */
     margin-bottom: 20px; /* Aumentei o espaçamento abaixo do título */
-    font-weight: 600; /* Engrosse a letra */
+    font-weight: 650; /* Engrosse a letra */
 }
 
 .subtitle {
@@ -63,7 +85,7 @@ body {
     display: block;
     width: 70%; /* A largura foi ajustada para 70% do subtítulo */
     height: 2px; /* Espessura da linha */
-    background-color: #800080; /* Cor roxa */
+    background-color: #e7191f; /* Cor roxa */
     margin: 30px auto 0; /* Aumentei a margem superior da linha para afastá-la mais do subtítulo */
 }
 
@@ -73,66 +95,51 @@ body {
     color: #F5F5F5; /* Cor suave, quase branca */
     text-align: center;
     margin: 0 40px;
-    font-weight: 400;
+    font-weight: 700; /* Negrito */
     margin-top: 30px; /* Ajuste o valor para o mesmo espaçamento entre a linha e o primeiro quadrado */
 }
 
+/* Estilos para o contêiner do cronômetro */
 .timer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     margin-top: 30px;
 }
 
-.timer-table {
-    width: 100%;
-    text-align: center;
-    border-collapse: separate; /* Garante que as células não colidam */
-    border-spacing: 15px; /* Aumenta o espaçamento entre as células */
-    table-layout: fixed; /* Garante que a largura das células seja fixa */
+/* Estilo para as linhas da tabela */
+.timer-row {
     display: flex;
-    justify-content: center; /* Centraliza a tabela na página */
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os retângulos */
+    margin-bottom: 30px;
+}
+
+/* Estilo para cada retângulo */
+.timer-box {
+    width: 300px; /* Largura do retângulo */
+    height: 120px; /* Altura do retângulo */
+    background-color: #000000; /* Cor de fundo preta */
+    color: white; /* Cor do texto */
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Bordas arredondadas */
 }
 
-.timer-table td {
-    padding: 20px; /* Ajusta o padding dentro de cada quadrado */
-    background-color: #1c1c1c; /* Cor de fundo igual ao fundo da página */
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.4rem; /* Tamanho da fonte */
-    font-weight: 500;
-    width: 400px; /* Largura dos quadrados */
-    height: 120px; /* Altura dos quadrados */
-    display: flex; /* Ativa o uso de Flexbox */
-    flex-direction: column; /* Organiza o conteúdo verticalmente */
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
-    box-shadow: 
-        0 0 5px rgba(75, 0, 130, 0.7),  /* Roxo escuro */
-        0 0 15px rgba(138, 43, 226, 0.5), /* Roxo médio */
-        0 0 25px rgba(204, 102, 255, 0.3), /* Roxo claro */
-        0 0 35px rgba(255, 182, 255, 0.2), /* Roxo muito claro */
-        0 0 45px rgba(255, 240, 255, 0.1); /* Quase branco, criando um brilho suave */
-    margin: 20px; /* Aumenta o espaço entre os quadrados */
-}
-
-.timer-table td span {
-    font-size: 2.4rem; /* Tamanho maior para os números */
+/* Estilo do número dentro de cada retângulo */
+.timer-box span {
+    font-size: 3rem; /* Tamanho maior para os números */
     font-weight: 600; /* Deixar o número mais grosso */
 }
 
-.timer-table td .label {
+/* Estilo do rótulo abaixo do número */
+.timer-box .label {
     font-size: 1.2rem; /* Tamanho da fonte */
-    font-weight: 400; /* Peso mais leve para os rótulos */
-    margin-top: 10px; /* Dá um pequeno espaço entre o número e o rótulo */
+    font-weight: 400; /* Peso mais leve para o rótulo */
+    margin-top: 10px; /* Espaço entre o número e o rótulo */
 }
 
 
-
-
-.timer-table td:first-child {
-    border-top: none;
-}
