@@ -153,7 +153,7 @@ body {
     }
 
     .timer-box {
-        flex: 0 0 48%; /* Faz com que cada retângulo ocupe cerca de 50% da largura */
-        max-width: 48%; /* Limita a largura máxima para 48% */
+        flex: 0 0 24%; /* Faz com que cada retângulo ocupe cerca de 50% da largura */
+        max-width: 24%; /* Limita a largura máxima para 48% */
     }
 }
