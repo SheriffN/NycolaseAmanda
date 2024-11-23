@@ -151,9 +151,9 @@ body {
     }
 
     .timer-box {
-        width: 48%; /* Ajuste para garantir que duas caixas caibam lado a lado */
-        max-width: 48%; /* Define largura máxima para que duas caixas fiquem lado a lado */
-        margin-bottom: 10px; /* Garante que as caixas não fiquem coladas */
+        width: 28%; /* Ajuste para garantir que duas caixas caibam lado a lado */
+        max-width: 28%; /* Define largura máxima para que duas caixas fiquem lado a lado */
+        margin-bottom: 15px; /* Garante que as caixas não fiquem coladas */
         height: auto; /* Ajusta a altura automaticamente */
         flex-grow: 1; /* Faz com que a caixa cresça proporcionalmente */
     }
