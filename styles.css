@@ -112,15 +112,15 @@ body {
 .timer-row {
     display: flex;
     flex-wrap: wrap; /* Permite que os itens quebrem a linha no mobile */
-    justify-content: space-between; /* Distribui os itens de maneira espaçada */
-    gap: 30px; /* Espaçamento entre os retângulos */
+    justify-content: space-between; /* Garante que as caixas fiquem bem espaçadas */
+    gap: 20px; /* Espaço entre as colunas */
     margin-bottom: 30px;
 }
 
 /* Estilo para cada retângulo */
 .timer-box {
-    width: 150px; /* Largura do retângulo */
-    height: 120px; /* Altura do retângulo */
+    width: 150px; /* Largura fixa do retângulo */
+    height: 120px; /* Altura fixa do retângulo */
     background-color: #000000; /* Cor de fundo preta */
     color: white; /* Cor do texto */
     display: flex;
@@ -128,8 +128,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 15px; /* Bordas arredondadas */
-    margin: 10px; /* Espaço entre os retângulos */
-    box-sizing: border-box; /* Inclui a borda e o padding no cálculo da largura */
+    margin-bottom: 10px; /* Margem inferior para separar as caixas */
 }
 
 /* Estilo do número dentro de cada retângulo */
@@ -147,14 +146,13 @@ body {
 
 /* Estilos responsivos para telas menores (mobile) */
 @media screen and (max-width: 768px) {
-    /* Ajustes para garantir duas colunas no mobile */
     .timer-row {
-        justify-content: space-evenly; /* Espaça igualmente os itens */
+        justify-content: space-between; /* Garante o espaçamento entre as caixas */
     }
 
     .timer-box {
-        width: calc(50% - 20px); /* Garante que duas colunas fiquem lado a lado */
-        max-width: 24%; /* Define a largura máxima para 50% da tela */
-        margin: 10px 0; /* Ajuste as margens para garantir espaçamento */
+        width: 48%; /* Ajuste para garantir que duas caixas caibam lado a lado */
+        max-width: 48%; /* Define largura máxima para que duas caixas fiquem lado a lado */
+        margin-bottom: 10px; /* Garante que as caixas não fiquem coladas */
     }
 }
