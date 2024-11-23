@@ -152,6 +152,7 @@ body {
 
     .timer-box {
         width: 48%; /* Ajuste para garantir que duas caixas caibam lado a lado */
+        height: auto; /* Ajusta a altura para que as caixas não fiquem comprimidas */
         max-width: 48%; /* Define largura máxima para que duas caixas fiquem lado a lado */
         margin-bottom: 10px; /* Garante que as caixas não fiquem coladas */
     }
