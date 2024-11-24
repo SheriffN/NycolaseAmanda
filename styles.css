@@ -121,7 +121,7 @@ body {
 .timer-box {
     flex: 1 1 45%; /* Garante que cada caixa ocupe 45% da largura do container */
     min-width: 150px; /* Garante que as caixas não fiquem menores que 150px */
-    height: 120px; /* Altura fixa do retângulo */
+    height: 100px; /* Altura ajustada para se adaptar */
     background-color: #000000; /* Cor de fundo preta */
     color: white; /* Cor do texto */
     display: flex;
@@ -131,17 +131,17 @@ body {
     border-radius: 15px; /* Bordas arredondadas */
 }
 
-/* Estilo do número dentro de cada retângulo */
+/* Ajustar o tamanho da fonte dentro dos retângulos */
 .timer-box span {
-    font-size: 3rem; /* Tamanho maior para os números */
+    font-size: 2.5rem; /* Tamanho ajustado para o número */
     font-weight: 600; /* Deixar o número mais grosso */
 }
 
-/* Estilo do rótulo abaixo do número */
+/* Ajuste para o rótulo abaixo do número */
 .timer-box .label {
-    font-size: 1.2rem; /* Tamanho da fonte */
+    font-size: 1rem; /* Tamanho do texto do rótulo ajustado */
     font-weight: 400; /* Peso mais leve para o rótulo */
-    margin-top: 10px; /* Espaço entre o número e o rótulo */
+    margin-top: 5px; /* Menos espaço entre o número e o rótulo */
 }
 
 /* Estilos responsivos para telas menores (mobile) */
@@ -154,5 +154,13 @@ body {
         flex: 1 1 45%; /* Garante que as caixas ocupem 45% de largura */
         height: auto; /* Ajusta a altura automaticamente */
         min-width: 150px; /* Garante a largura mínima */
+    }
+
+    .timer-box span {
+        font-size: 2rem; /* Ajusta o tamanho do número para caber bem no retângulo */
+    }
+
+    .timer-box .label {
+        font-size: 1rem; /* Ajuste para o rótulo não ficar pequeno */
     }
 }
