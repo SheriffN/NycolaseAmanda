@@ -66,7 +66,7 @@ body {
     color: #e7191f; /* Cor mais brilhante (vermelho mais vibrante) */
     text-align: center; /* Centraliza o título */
     margin-bottom: 20px; /* Aumentei o espaçamento abaixo do título */
-    font-weight: 650; /* Engrosse a letra */
+    font-weight: 700; /* Engrosse a letra */
 }
 
 .subtitle {
@@ -91,7 +91,7 @@ body {
 
 .juntos-texto {
     font-family: 'Roboto', sans-serif;
-    font-size: 2.5rem; /* Tamanho da fonte */
+    font-size: 2.0rem; /* Tamanho da fonte */
     color: #F5F5F5; /* Cor suave, quase branca */
     text-align: center;
     margin: 0 40px;
@@ -121,7 +121,7 @@ body {
 .timer-box {
     flex: 1 1 45%; /* Garante que cada caixa ocupe 45% da largura do container */
     min-width: 150px; /* Garante que as caixas não fiquem menores que 150px */
-    height: 120px; /* Aumentei a altura do retângulo */
+    height: 130px; /* Aumentei a altura do retângulo */
     background-color: #000000; /* Cor de fundo preta */
     color: white; /* Cor do texto */
     display: flex;
@@ -152,7 +152,7 @@ body {
 
     .timer-box {
         flex: 1 1 45%; /* Garante que as caixas ocupem 45% de largura */
-        height: 120px; /* Aumentei a altura no mobile também */
+        height: 130px; /* Aumentei a altura no mobile também */
         min-width: 150px; /* Garante a largura mínima */
     }
 
